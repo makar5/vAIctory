@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - vAIctory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        main {
+            padding: 3rem 0;
+        }
+
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="home">
+                <div class="content-section" style="text-align: center; padding: 4rem 2rem;">
+                    <h1>Welcome to vAIctory</h1>
+                    <p class="subtitle" style="color: #666; font-size: 1.3rem;">Your Gateway to AI Innovation</p>
+                    <p style="margin: 2rem 0; color: #666;">
+                        Discover the power of artificial intelligence and transform your ideas into reality.
+                    </p>
+                    <a href="#features" class="btn">Get Started</a>
+                </div>
+            </section>
+
+            <section id="about" class="content-section">
+                <h2>About Us</h2>
+                <p>
+                    Welcome to vAIctory, where cutting-edge artificial intelligence meets practical solutions. 
+                    We're dedicated to harnessing the power of AI to create innovative products and services 
+                    that make a difference.
+                </p>
+                <p>
+                    Our mission is to democratize AI technology and make it accessible to everyone, 
+                    regardless of their technical background.
+                </p>
+            </section>
+
+            <section id="features" class="content-section">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🚀 Innovation</h3>
+                        <p>Cutting-edge AI technology that pushes the boundaries of what's possible.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎯 Accuracy</h3>
+                        <p>Precise and reliable AI models trained on the latest data and best practices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Speed</h3>
+                        <p>Lightning-fast processing that delivers results in real-time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔒 Security</h3>
+                        <p>Enterprise-grade security to protect your data and privacy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="content-section" style="text-align: center;">
+                <h2>Get In Touch</h2>
+                <p>Have questions or want to learn more? We'd love to hear from you!</p>
+                <a href="mailto:mike.makar@gmail.com" class="btn" style="margin-top: 1rem;">Contact Us</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 vAIctory. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
