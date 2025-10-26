@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - vAIctory</title>
+    <title>vAIctory - AI-Powered Solutions</title>
     <style>
         * {
             margin: 0;
@@ -12,204 +12,499 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: #0a0a0a;
+            background-color: #ffffff;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-container {
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        nav {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        nav ul {
-            list-style: none;
+            padding: 0 2rem;
             display: flex;
-            gap: 2rem;
-            padding: 1rem 0;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        nav a {
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0a0a0a;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #5a5a5a;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0a0a0a;
+        }
+
+        .nav-cta {
+            background: #0a0a0a;
             color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
-            transition: opacity 0.3s;
+            transition: all 0.2s;
         }
 
-        nav a:hover {
-            opacity: 0.8;
+        .nav-cta:hover {
+            background: #333;
         }
 
-        h1 {
+        .hero {
+            margin-top: 80px;
+            padding: 8rem 0 6rem;
+            text-align: center;
+            background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #0a0a0a;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-primary {
+            background: #0a0a0a;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0a0a0a;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            border: 1.5px solid #0a0a0a;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #fafafa;
+            transform: translateY(-2px);
+        }
+
+        .stats {
+            padding: 4rem 0;
+            background: #0a0a0a;
+            color: white;
+        }
+
+        .stats-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
             font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .stat-item p {
+            color: #999;
+            font-size: 1rem;
         }
 
-        main {
-            padding: 3rem 0;
+        .features {
+            padding: 8rem 0;
+            background: #ffffff;
         }
 
-        .content-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
+        .features-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        h2 {
-            color: #667eea;
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            font-size: 2rem;
+            color: #0a0a0a;
+            letter-spacing: -0.02em;
         }
 
-        p {
-            margin-bottom: 1rem;
+        .section-header p {
+            font-size: 1.25rem;
             color: #666;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .feature-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .feature-card {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 2.5rem;
+            background: #fafafa;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
         .feature-card h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0a0a0a;
         }
 
-        footer {
-            background-color: #333;
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial {
+            padding: 8rem 0;
+            background: #fafafa;
+        }
+
+        .testimonial-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.75rem;
+            line-height: 1.5;
+            color: #0a0a0a;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .testimonial-author {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .cta-section {
+            padding: 8rem 0;
+            background: #0a0a0a;
             color: white;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
         }
 
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #999;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer {
+            background: #0a0a0a;
             color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 4rem 0 2rem;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">vAIctory</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Get Started</a>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <div class="container">
-            <section id="home">
-                <div class="content-section" style="text-align: center; padding: 4rem 2rem;">
-                    <h1>Welcome to vAIctory</h1>
-                    <p class="subtitle" style="color: #666; font-size: 1.3rem;">Your Gateway to AI Innovation</p>
-                    <p style="margin: 2rem 0; color: #666;">
-                        Discover the power of artificial intelligence and transform your ideas into reality.
+    <section class="hero">
+        <div class="hero-container">
+            <h1>The AI Platform Built for Scale</h1>
+            <p class="hero-subtitle">
+                Accelerate your AI development with enterprise-grade tools and infrastructure designed for the next generation of intelligent applications.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Start Building</a>
+                <a href="#features" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>10M+</h3>
+                <p>API Requests</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Enterprise Customers</p>
+            </div>
+            <div class="stat-item">
+                <h3>99.9%</h3>
+                <p>Uptime</p>
+            </div>
+            <div class="stat-item">
+                <h3>50ms</h3>
+                <p>Average Latency</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="features-container">
+            <div class="section-header">
+                <h2>Built for Production</h2>
+                <p>Everything you need to build, deploy, and scale AI applications with confidence</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🚀 Performance</h3>
+                    <p>Lightning-fast inference with GPU acceleration and optimized models for production workloads.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Security</h3>
+                    <p>Enterprise-grade security with encryption at rest and in transit, plus SOC 2 compliance.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Monitoring</h3>
+                    <p>Real-time monitoring, analytics, and logging to track performance and debug issues quickly.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔧 Developer Tools</h3>
+                    <p>Comprehensive SDKs, documentation, and integrations to get you up and running in minutes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💳 Flexible Pricing</h3>
+                    <p>Pay-as-you-go pricing with no upfront costs. Scale from prototype to production seamlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌐 Global CDN</h3>
+                    <p>Content delivery network ensures low latency worldwide with 99.9% uptime SLA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="testimonial-container">
+            <p class="testimonial-text">
+                "vAIctory has transformed how we build AI applications. The infrastructure is rock solid and the developer experience is exceptional."
+            </p>
+            <p class="testimonial-author">— Sarah Chen, CTO at TechCorp</p>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <h2>Ready to get started?</h2>
+            <p>Join thousands of developers building the next generation of AI applications</p>
+            <a href="mailto:mike.makar@gmail.com" class="btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div>
+                    <h4>vAIctory</h4>
+                    <p style="color: #999; margin-top: 1rem; line-height: 1.6;">
+                        The AI platform built for scale. Enterprise-grade infrastructure for intelligent applications.
                     </p>
-                    <a href="#features" class="btn">Get Started</a>
                 </div>
-            </section>
-
-            <section id="about" class="content-section">
-                <h2>About Us</h2>
-                <p>
-                    Welcome to vAIctory, where cutting-edge artificial intelligence meets practical solutions. 
-                    We're dedicated to harnessing the power of AI to create innovative products and services 
-                    that make a difference.
-                </p>
-                <p>
-                    Our mission is to democratize AI technology and make it accessible to everyone, 
-                    regardless of their technical background.
-                </p>
-            </section>
-
-            <section id="features" class="content-section">
-                <h2>Key Features</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>🚀 Innovation</h3>
-                        <p>Cutting-edge AI technology that pushes the boundaries of what's possible.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>🎯 Accuracy</h3>
-                        <p>Precise and reliable AI models trained on the latest data and best practices.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>⚡ Speed</h3>
-                        <p>Lightning-fast processing that delivers results in real-time.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>🔒 Security</h3>
-                        <p>Enterprise-grade security to protect your data and privacy.</p>
-                    </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                    </ul>
                 </div>
-            </section>
-
-            <section id="contact" class="content-section" style="text-align: center;">
-                <h2>Get In Touch</h2>
-                <p>Have questions or want to learn more? We'd love to hear from you!</p>
-                <a href="mailto:mike.makar@gmail.com" class="btn" style="margin-top: 1rem;">Contact Us</a>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 vAIctory. All rights reserved.</p>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#status">Status</a></li>
+                        <li><a href="#security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 vAIctory. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
